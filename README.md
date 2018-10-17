@@ -58,7 +58,7 @@ El siguiente ejercicio de desarrollo es una Kata de TDD.
 
 2. Modifique el método `add` para manejar una cantidad desconocida de números.
 
-3. Modifique el método `add` para manejar un salto de línea entre números (en lugar de comas).
+3. Modifique el método `add` para manejar un salto de línea entre números (además de comas).
     1. La siguiente entrada esta ok:  "1\n2,3"  (debe ser igual a 6)
     2. La siguiente entrada no es correcta:  "1,\n" (no es necesario escribir un test - solo para aclarar)
     
