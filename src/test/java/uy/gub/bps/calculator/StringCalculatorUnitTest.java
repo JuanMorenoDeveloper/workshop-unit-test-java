@@ -53,4 +53,13 @@ public class StringCalculatorUnitTest {
 
     assertThat(result).isEqualTo(15);
   }
+
+  @Test
+  public void givenTresNumerosConSaltoDeLinea_whenAdd_thenRetornoSuma() {
+    StringCalculator calc = new StringCalculator();
+
+    int result = calc.add("1\n2,3");
+
+    assertThat(result).isEqualTo(6);
+  }
 }
