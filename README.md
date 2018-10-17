@@ -5,7 +5,7 @@
 ### Nombrado de clases
 
 * Los test siempre deben tener el sufijo: ...UnitTest.java, ...IntegrationTest.java, ...LiveTest.java
-* Los test untarios deben ejecutarse en el build standard; los de integración o live no.
+* Los test unitarios deben ejecutarse en el build standard; los de integración o live no.
 
 ### Nombrado de métodos
 
