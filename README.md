@@ -64,7 +64,8 @@ El siguiente ejercicio de desarrollo es una Kata de TDD.
     
 4. Añada soporte para diferentes delimitadores
     1. Para cambiar el delimitador, el comienzo del String debe contener un separador de línea de la siguiente manera: "//[delimiter]\n[numbers…]" por ejemplo “//;\n1;2” debe retornar 3 usando como delimitador el ';'.
-    2. La primera línea es opcional. Todos los demás escenarios deben seguir siendo soportados.
+    2. La primera línea es opcional. Todos los demás escenarios deben seguir siendo soportados. **Los siguientes puntos tienen mayor dificultad.**
+
 5. Llamar a `add` con un número negativo debe lanzar una exception con el mensaje "negativos no están permitidos” - y el número negativo que fue enviado. Si hay múltiples números negativos se deberán mostrar todos en el mensaje de la excepción. 
 6. Números mayores a 1000 deben ser ignorados, sumando 2 + 1001  = 2
 7. Delimitadores pueden ser de cualquier tamaño con el siguiente formato:  "//[delimiter]\n" por ejemplo: "//[***]\n1\*\*\*2\*\*\*3" debe retornar 6
