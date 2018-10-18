@@ -38,7 +38,7 @@ public class StringCalculatorUnitTest {
   }
 
   @ParameterizedTest
-  @CsvSource(value = {"5,10,5;20", "4,3;7", "8,2;10", "4,5;9"}, delimiter = ';')
+  @CsvSource(value = {"5,10,5;20", "4,3;7", "8,2;10", "4,5;9", "4,5000;4"}, delimiter = ';')
   public void givenListaNumeros_whenAdd_thenRetornoSuma(String input, int output) throws Exception {
     StringCalculator calc = new StringCalculator();
 
@@ -74,7 +74,7 @@ public class StringCalculatorUnitTest {
     StringCalculator calc = new StringCalculator();
 
     int result1 = calc.add("//;\n1\n2;5");
-    int result2 = calc.add("//\\:\n1:2\n4");
+    int result2 = calc.add("//:\n1:2\n4");
 
     assertSoftly(softly -> {
       softly.assertThat(result1).isEqualTo(8);
@@ -92,5 +92,34 @@ public class StringCalculatorUnitTest {
     Throwable thrown = catchThrowable(() -> calc.add(input));
 
     assertThat(thrown).hasMessage(message);
+  }
+
+  @Test
+  public void givenNumerosMayoresAMil_whenAdd_thenRetornoSumaSinEllos() throws Exception {
+    StringCalculator calc = new StringCalculator();
+
+    int result = calc.add("//:\n1000:2\n4");
+
+    assertThat(result).isEqualTo(6);
+  }
+
+  @Test
+  public void givenListaConCustomDelimiters_whenAdd_thenRetornoSuma()
+      throws Exception {
+    StringCalculator calc = new StringCalculator();
+
+    int result1 = calc.add("//[***]\n5***10***5");
+    int result2 = calc.add("//[m]\n4m3m2");
+    int result3 = calc.add("//[xyz]\n8xyz2");
+    int result4 = calc.add("//[xyz][&]\n4xyz4&1");
+    int result5 = calc.add("//[*][%]\n1*2%3");
+
+    assertSoftly(softly -> {
+      softly.assertThat(result1).isEqualTo(20);
+      softly.assertThat(result2).isEqualTo(9);
+      softly.assertThat(result3).isEqualTo(10);
+      softly.assertThat(result4).isEqualTo(9);
+      softly.assertThat(result5).isEqualTo(6);
+    });
   }
 }
