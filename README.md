@@ -5,7 +5,7 @@
 ### Nombrado de clases
 
 * Los test siempre deben tener el sufijo: ...UnitTest.java, ...IntegrationTest.java, ...LiveTest.java
-* Los test untarios deben ejecutarse en el build standard; los de integración o live no.
+* Los test unitarios deben ejecutarse en el build standard; los de integración o live no.
 
 ### Nombrado de métodos
 
@@ -78,3 +78,5 @@ El siguiente ejercicio de desarrollo es una Kata de TDD.
 El objetivo de esta kata es escribir un programa que imprima los números del 1 al 100. Pero para los múltiplos de tres, imprima "Fizz" en lugar del número y para los múltiplos de cinco imprima "Buzz". Para los números que son múltiplos de tres y cinco, imprima "FizzBuzz".
 
 Use interfaces para la impresión de los números. Use mockito para manejar hacer un mock de la dependencia real.
+
+**Un ejemplo de solución de los ejercicios se encuentra en la rama solutions.** 
