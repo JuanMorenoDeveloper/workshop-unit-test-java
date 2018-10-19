@@ -43,14 +43,22 @@ public class FizzBuzz {
   }
 
   private String calculate(final int number) {
+    final String result;
+    if (number == 0) {
+      result = "0";
+    } else {
+      result = getFizzBuzzString(number);
+    }
+    return result;
+  }
+
+  private String getFizzBuzzString(final int number) {
     String result = String.valueOf(number);
     if (isDivisibleBy(number, THREE) && isDivisibleBy(number, FIVE)) {
       result = "FizzBuzz";
-    }
-    if (isDivisibleBy(number, THREE)) {
+    } else if (isDivisibleBy(number, THREE)) {
       result = "Fizz";
-    }
-    if (isDivisibleBy(number, FIVE)) {
+    } else if (isDivisibleBy(number, FIVE)) {
       result = "Buzz";
     }
     return result;

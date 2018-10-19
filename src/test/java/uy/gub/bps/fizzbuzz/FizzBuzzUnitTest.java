@@ -1,6 +1,7 @@
 package uy.gub.bps.fizzbuzz;
 
 import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.only;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 
@@ -19,9 +20,9 @@ public class FizzBuzzUnitTest {
   }
 
   @Test
-  public void givenRangeTo5_whenPrint_thenPrintFizzBuzzOnce() {
+  public void givenRangeTo16_whenPrint_thenPrintFizzBuzzOnce() {
     Printer printer = mock(Printer.class);
-    FizzBuzz fizzBuzz = new FizzBuzz(5, printer);
+    FizzBuzz fizzBuzz = new FizzBuzz(16, printer);
 
     fizzBuzz.printResults();
 
