@@ -25,7 +25,9 @@
     <maven-surefire-plugin.version>2.22.1</maven-surefire-plugin.version>
     <checkstyle-plugin.version>3.0.0</checkstyle-plugin.version>
     <pmd-plugin.version>3.10.0</pmd-plugin.version>
-    <spotbugs-plugin.version>3.1.3</spotbugs-plugin.version>
+    <site-plugin.version>3.7.1</site-plugin.version>
+    <reports-plugin.version>3.0.0</reports-plugin.version>
+    <spotbugs-plugin.version>3.1.7</spotbugs-plugin.version>
     <sevntu-checkstyle-plugin.version>1.32.0</sevntu-checkstyle-plugin.version>
     <sevntu-check-plugin.version>8.13</sevntu-check-plugin.version>
     <jacoco-plugin.version>0.8.2</jacoco-plugin.version>
@@ -136,8 +138,8 @@
         <version>${spotbugs-plugin.version}</version>
         <configuration>
           <effort>Max</effort>
-          <threshold>Default</threshold>
-          <omitVisitors/>
+          <threshold>Low</threshold>
+          <includeTests>true</includeTests>
         </configuration>
       </plugin>
       <plugin>
@@ -180,6 +182,26 @@
           </execution>
         </executions>
       </plugin>
+      <!-- mvn site-->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-site-plugin</artifactId>
+        <version>${site-plugin.version}</version>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-project-info-reports-plugin</artifactId>
+        <version>${reports-plugin.version}</version>
+      </plugin>
     </plugins>
   </build>
+  <reporting>
+    <plugins>
+      <plugin>
+        <groupId>com.github.spotbugs</groupId>
+        <artifactId>spotbugs-maven-plugin</artifactId>
+        <version>${spotbugs-plugin.version}</version>
+      </plugin>
+    </plugins>
+  </reporting>
 </project>
