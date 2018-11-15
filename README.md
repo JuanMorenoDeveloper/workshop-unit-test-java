@@ -1,5 +1,7 @@
 # Workshop pruebas unitarias con Java
 
+[![Build Status](https://travis-ci.org/earth001/workshop-unit-test-java.svg?branch=solutions)](https://travis-ci.org/earth001/workshop-unit-test-java)
+
 ## Convenciones
 
 ### Nombrado de clases
